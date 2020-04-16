@@ -1,6 +1,6 @@
 
 English  ∙  [简体中文](README-zh-Hans.md) 
-./img/CloudASG-NDR.png
+(./img/CloudASG-NDR.png)
 
 ![packet agent's title](./img/title.jpg)
 # Netis Packet Agent 0.3.4
