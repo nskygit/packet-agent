@@ -2,7 +2,7 @@
 English  ∙  [简体中文](README-zh-Hans.md) 
 (./img/CloudASG-NDR.png)
 
-![packet agent's title](./img/title.jpg)
+![packet agent's title](./img/CloudASG-NDR.png)
 # Netis Packet Agent 0.3.4
 
 [![Stable release](https://img.shields.io/badge/version-0.3.4-green.svg)](https://github.com/Netis/packet-agent/releases/tag/0.3.4)
