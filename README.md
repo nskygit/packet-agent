@@ -54,6 +54,7 @@ yum install libpcap wget
 or 
 ```
 ./pktminerg -i greif1 -r 172.16.1.201
+```
 
 #### Ubuntu 18.04LTS
 1. Install libpcap and wget
