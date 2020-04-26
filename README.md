@@ -4,7 +4,7 @@ English  ∙  [简体中文](README-zh-Hans.md)
 ![packet agent's title](./img/CloudASG-NDR.png)
 # Netis Packet Agent 0.4.CSG
 
-[![Stable release](https://img.shields.io/badge/version-0.3.4-green.svg)](https://github.com/Netis/packet-agent/releases/tag/0.3.4)
+[![Stable release](https://img.shields.io/badge/version-0.4.CSG-green.svg)]
 [![Software License](https://img.shields.io/badge/license-BSD3-green.svg)](./LICENSE.md)
 
 ## What is Netis Packet Agent?
