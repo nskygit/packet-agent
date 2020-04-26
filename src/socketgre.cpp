@@ -131,7 +131,7 @@ int PcapExportGre::exportPacket(size_t index, const struct pcap_pkthdr* header, 
         pkt_data += 2;
         length -= 2;
     }
-	
+
     std::memcpy(reinterpret_cast<void*>(&(grebuffer[sizeof(grehdr_t)])),
                 reinterpret_cast<const void*>(pkt_data), length);
     ssize_t nSend = sendto(socketfd, &(grebuffer[0]), length + sizeof(grehdr_t), 0, (struct sockaddr*) &remote_addr,
