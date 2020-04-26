@@ -7,6 +7,7 @@
 PcapHandler::PcapHandler() {
     _gre_count = 0;
     _gre_drop_count = 0;
+    _dev_link_type = 0;
     _pcap_handle = NULL;
     _pcap_dumpter = NULL;
     std::memset(_errbuf, 0, sizeof(_errbuf));
@@ -74,6 +75,9 @@ void PcapHandler::packetHandler(const struct pcap_pkthdr* header, const uint8_t*
 
 void PcapHandler::addExport(std::shared_ptr<PcapExportBase> pcapExport) {
     _exports.push_back(pcapExport);
+	if (_dev_link_type > 0) {
+		pcapExport->setLinkType(_dev_link_type);
+	}    
 }
 
 int PcapHandler::startPcapLoop(int count) {
@@ -158,6 +162,13 @@ int PcapLiveHandler::openPcap(const std::string& dev, const pcap_init_t& param, 
         return -1;
     }
 
+    _dev_link_type = pcap_datalink(pcap_handle);
+    std::cout << "dev: " << dev.c_str() 
+              << ", linktype: " << _dev_link_type 
+              << " (name: " << pcap_datalink_val_to_name(_dev_link_type) 
+              << " , desc: " << pcap_datalink_val_to_description(_dev_link_type) 
+              << ")" << std::endl;
+    
     if (expression.length() > 0) {
         std::cout << StatisLogContext::getTimeString() << "Set pcap filter as \"" << expression << "\"." << std::endl;
         if (pcap_lookupnet(dev.c_str(), &net, &mask, _errbuf) == -1) {
