@@ -2,7 +2,7 @@
 English  ∙  [简体中文](README-zh-Hans.md) 
 
 ![packet agent's title](./img/CloudASG-NDR.png)
-# Netis Packet Agent 0.3.4
+# Netis Packet Agent 0.4.CSG
 
 [![Stable release](https://img.shields.io/badge/version-0.3.4-green.svg)](https://github.com/Netis/packet-agent/releases/tag/0.3.4)
 [![Software License](https://img.shields.io/badge/license-BSD3-green.svg)](./LICENSE.md)
@@ -29,23 +29,21 @@ With 3 utilities:
 
 #### CentOS 6/7 and RedHat 7
 1. Install libpcap and wget
-```bash
 yum install libpcap wget
-```
 
-2. Download and install the RPM package. Find the latest package from [Releases Page](https://github.com/Netis/packet-agent/releases).
-```bash
-wget https://github.com/Netis/packet-agent/releases/download/v0.3.4/netis-packet-agent-0.3.4.el6.x86_64.rpm
-rpm -ivh netis-packet-agent-0.3.4.el6.x86_64.rpm
-```
+2. Run 
+./pktminerg -i eth0 -r 172.16.1.201  --expression "host 112.96.250.1"
+or 
+./pktminerg -i greif1 -r 172.16.1.201
 
 #### SUSE 12
-1. Download and install the RPM package. Find the latest package from [Releases Page](https://github.com/Netis/packet-agent/releases).
-```bash
-wget https://github.com/Netis/packet-agent/releases/download/v0.3.4/netis-packet-agent-0.3.4.el6.x86_64.rpm
-rpm -ivh netis-packet-agent-0.3.4.el6.x86_64.rpm
-```
+1. Install libpcap and wget
+yum install libpcap wget
 
+2. Run 
+./pktminerg -i eth0 -r 172.16.1.201  --expression "host 112.96.250.1"
+or 
+./pktminerg -i greif1 -r 172.16.1.201
 
 #### Ubuntu 18.04LTS
 1. Install libpcap and wget
@@ -53,18 +51,10 @@ rpm -ivh netis-packet-agent-0.3.4.el6.x86_64.rpm
 sudo apt-get install libpcap-dev wget
 ```
 
-2. Download and install the DEB package. Find the latest package from [Releases Page](https://github.com/Netis/packet-agent/releases).
-```bash
-wget https://github.com/Netis/packet-agent/releases/download/v0.3.4/netis-packet-agent-0.3.4_amd64.deb
-sudo dpkg -i netis-packet-agent-0.3.4_amd64.deb
-```
-
-3. If libpcap.so.1 not found when running pktminerg, create softlink for libpcap.so.1 in suitable directory.
-```bash
-whereis libpcap.so
-cd /path/to/libpcap.so
-ln -s libpcap.so.x.y.z libpcap.so.1
-```
+2. Run 
+./pktminerg -i eth0 -r 172.16.1.201  --expression "host 112.96.250.1"
+or 
+./pktminerg -i greif1 -r 172.16.1.201
 
 Remarks: If it encounter a library dependency error when install from rpm, you should install boost_1_59_0 or later. If this also can't work, you can build and run from source.
 
@@ -132,14 +122,5 @@ For build precondition and steps, please refer to this [document](./BUILD.md).
 
 ## Contributing
 Fork the project and send pull requests. We welcome pull requests from members of all open source community.
-
-## License
-Copyright (c) 2018 Netis.<br/>
-The content of this repository bound by the following licenses:
-- The computer software is licensed under the [BSD-3-Clause](./LICENSE.md).
-
-## Contact info
-* You can E-mail to [developer@netis.com](mailto:developer@netis.com).
-* You can also report issues and suggestions via [GitHub issues](https://github.com/Netis/packet-agent/issues).
 
 <br/>
