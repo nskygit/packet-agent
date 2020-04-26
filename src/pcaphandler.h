@@ -23,6 +23,7 @@ protected:
     std::shared_ptr<GreSendStatisLog> _statislog;
     uint64_t _gre_count;
     uint64_t _gre_drop_count;
+    int _dev_link_type;
 protected:
     int openPcapDumper(pcap_t *pcap_handle);
     void closePcapDumper();
