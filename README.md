@@ -29,24 +29,30 @@ With 3 utilities:
 
 #### CentOS 6/7 and RedHat 7
 1. Install libpcap and wget
+```
 yum install libpcap wget
-
-2. Run 
+```
+2. Run
+```
 ./pktminerg -i eth0 -r 172.16.1.201  --expression "host 112.96.250.1"
-
+```
 or 
-
+```
 ./pktminerg -i greif1 -r 172.16.1.201
+```
 
 #### SUSE 12
 1. Install libpcap and wget
+```
 yum install libpcap wget
+```
 
 2. Run 
+```
 ./pktminerg -i eth0 -r 172.16.1.201  --expression "host 112.96.250.1"
-
+```
 or 
-
+```
 ./pktminerg -i greif1 -r 172.16.1.201
 
 #### Ubuntu 18.04LTS
@@ -56,12 +62,13 @@ sudo apt-get install libpcap-dev wget
 ```
 
 2. Run 
+```
 ./pktminerg -i eth0 -r 172.16.1.201  --expression "host 112.96.250.1"
-
+```
 or 
-
+```
 ./pktminerg -i greif1 -r 172.16.1.201
-
+```
 Remarks: If it encounter a library dependency error when install from rpm, you should install boost_1_59_0 or later. If this also can't work, you can build and run from source.
 
 Remarks: Now only support CentOS 6/7, RedHat 7, SUSE 12, Ubuntu 18.04 LTS.
