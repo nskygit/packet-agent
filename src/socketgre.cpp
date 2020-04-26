@@ -28,6 +28,7 @@ PcapExportGre::PcapExportGre(const std::vector<std::string>& remoteips, uint32_t
         _remote_addrs(remoteips.size()),
         _grebuffers(remoteips.size()) {
     _type = exporttype::gre;
+    _link_type = 0;
     for (size_t i = 0; i < remoteips.size(); ++i) {
         _socketfds[i] = INVALIDE_SOCKET_FD;
         _grebuffers[i].resize(65535 + sizeof(grehdr_t), '\0');
